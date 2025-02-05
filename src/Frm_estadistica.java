@@ -1,7 +1,7 @@
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
 import javax.swing.WindowConstants;
 
 public class Frm_estadistica extends JFrame {
@@ -34,20 +34,44 @@ public class Frm_estadistica extends JFrame {
         getContentPane().add(txtDato);
 
         //Botón Agregar
-        JButton btDato=new JButton("Agregar");
-        btDato.setBounds(50, 50, 100, 25);
-        getContentPane().add(btDato);
+        JButton btnagregar=new JButton("Agregar");
+        btnagregar.setBounds(50, 50, 100, 25);
+        getContentPane().add(btnagregar);
 
         //Botón quitar
-        JButton btnDato=new JButton("Quitar");
-        btnDato.setBounds(50, 80, 100, 25);
-        getContentPane().add(btnDato);
+        JButton btnquitar=new JButton("Quitar");
+        btnquitar.setBounds(50, 80, 100, 25);
+        getContentPane().add(btnquitar);
 
         //Botón desviacion
-        JButton btdDato=new JButton("Desviación");
-        btdDato.setBounds(200, 200, 100, 25);
-        getContentPane().add(btdDato);
+        JButton btdDes=new JButton("Desviación");
+        btdDes.setBounds(200, 200, 100, 25);
+        getContentPane().add(btdDes);
 
         //Lista
+        JList lstmuestra=new JList();
+        lstmuestra.setBounds(210, 40, 100, 150);
+        getContentPane().add(lstmuestra);
+
+        //Eventos de la GUI
+        btnagregar.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                agregarDato();
+            }
+        });
+        btnquitar.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                quitarDato();
+            }
+        });
+
+    }
+
+    private void agregarDato(){
+        JOptionPane.showMessageDialog(null, "Hizo clic en Agregar");
+    }
+
+    private void quitarDato(){
+        JOptionPane.showMessageDialog(null, "Hizo clic en quitar");
     }
 }
