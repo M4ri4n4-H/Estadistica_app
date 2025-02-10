@@ -26,6 +26,7 @@ public class Frm_estadistica extends JFrame {
         btDatos.setBounds(200, 10, 100, 25);
         getContentPane().add(btDatos);
 
+        
         // Campo dato
         txtDato = new JTextField("");
         txtDato.setBounds(50, 10, 100, 25);
@@ -80,7 +81,8 @@ public class Frm_estadistica extends JFrame {
 
     }
 
-    // Declarar el arreglo que almacenará los datos de la muestra
+
+    // Declanar el arreglo que almacenará los datos de la muestra
     private double[] muestra = new double[1000];
     private int totalDatos = -1;
 
